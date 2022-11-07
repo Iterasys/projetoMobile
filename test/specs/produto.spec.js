@@ -16,6 +16,13 @@ describe("Compra ate Pagina do Produto", () => {
         const nomeProduto = '//android.widget.FrameLayout[@content-desc="Container for fragments"]/android.widget.ScrollView/android.view.ViewGroup/android.widget.TextView';
         expect(await $(nomeProduto).getText()).toEqual("Sauce Lab Back Packs");
 
+        // Arrasta para Cima
+        await driver.touchAction([
+            { action: "press", x: 350, y: 1100 },
+            { action: "moveTo", x: 350, y: 300 },
+            "release"
+        ])
+
         // Mapeia e valida o preço do produto
         const precoProduto = '//android.widget.FrameLayout[@content-desc="Container for fragments"]/android.widget.ScrollView/android.view.ViewGroup/android.widget.LinearLayout/android.widget.TextView';
         expect(await $(precoProduto).getText()).toEqual("$ 29.99");
