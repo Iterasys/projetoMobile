@@ -38,10 +38,11 @@ exports.config = {
     //
     specs: [
         './features/**/*.feature'
+        // './test/specs/**/*.js' // to first example
     ],
     // Patterns to exclude.
     exclude: [
-        // 'path/to/excluded/files'
+        './features/login.feature'
     ],
     //
     // ============
@@ -129,7 +130,7 @@ exports.config = {
     //
     // Make sure you have the wdio adapter package for the specific framework installed
     // before running any tests.
-    framework: 'cucumber',
+    framework: 'cucumber', // change to 'mocha' for first example
     //
     // The number of times to retry the entire specfile when it fails as a whole
     // specFileRetries: 1,
